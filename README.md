@@ -1,0 +1,2 @@
+# daaily.fun
+gierkowa strona
