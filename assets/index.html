@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6efe5"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>daily fun</title>
+<style>
+:root{color-scheme:light;--bg:#f6efe5;--paper:#fff;--ink:#30231d;--muted:#8a7b71;--line:#e7dfd6;--accent:#74523f;--soft:#f1ebe4;--soft-hover:#e9dfd5;--shadow:0 7px 18px rgba(56,37,25,.14),0 2px 5px rgba(56,37,25,.07)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#2b211d;--paper:#413129;--ink:#f5e9da;--muted:#c2aa98;--line:#624a3c;--accent:#e1b895;--soft:#513c30;--soft-hover:#624938;--shadow:0 8px 20px rgba(0,0,0,.28),0 2px 6px rgba(0,0,0,.2)}
+:root[data-theme="halloween"]{color-scheme:dark;--bg:#211b26;--paper:#342a39;--ink:#fff0dc;--muted:#c4adbf;--line:#5a435e;--accent:#ffad52;--soft:#443348;--soft-hover:#5a3b48;--shadow:0 8px 22px rgba(0,0,0,.34),0 2px 7px rgba(0,0,0,.24)}
+:root[data-theme="halloween"] body{background-color:var(--bg);background-image:radial-gradient(ellipse at 12% 8%,rgba(250,139,55,.19),transparent 31%),radial-gradient(ellipse at 90% 88%,rgba(121,72,145,.22),transparent 36%),linear-gradient(145deg,#211b26,#29202b 48%,#211b26)}
+:root[data-theme="halloween"] body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.17;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221800%22%20height%3D%221300%22%20viewBox%3D%220%200%201800%201300%22%20fill%3D%22none%22%20stroke%3D%22%23e8d5e5%22%20stroke-width%3D%222.1%22%20stroke-opacity%3D%22.8%22%3E%3Cg%20transform%3D%22translate%281800%200%29%20scale%28-1%201%29%22%3E%3Cpath%20d%3D%22M0%200L1800%200M0%200L1739%20465M0%200L1559%20900M0%200L1273%201273M0%200L900%201559M0%200L465%201739M0%200L0%201800%22%2F%3E%3Cpath%20d%3D%22M180%200A180%20180%200%200%201%200%20180M360%200A360%20360%200%200%201%200%20360M540%200A540%20540%200%200%201%200%20540M720%200A720%20720%200%200%201%200%20720M900%200A900%20900%200%200%201%200%20900M1080%200A1080%201080%200%200%201%200%201080M1260%200A1260%201260%200%200%201%200%201260%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:100% 100%;background-repeat:no-repeat;background-position:center center;mask-image:linear-gradient(135deg,#000,rgba(0,0,0,.72))}}
+:root[data-theme="halloween"] body>main{position:relative;z-index:1}
+:root[data-theme="halloween"] .tile{border-color:#76523f;box-shadow:0 8px 22px rgba(9,5,14,.35),inset 0 0 0 1px rgba(249,157,76,.15)}:root[data-theme="halloween"] .tile:hover{border-color:#f39b4d;box-shadow:0 12px 28px rgba(9,5,14,.45),0 0 0 2px rgba(243,155,77,.18)}:root[data-theme="halloween"] .tile[data-game="enclose.horse"]{overflow:visible}:root[data-theme="halloween"] .tile[data-game="enclose.horse"] .art{border-radius:15px 15px 0 0}:root[data-theme="halloween"] .tile[data-game="enclose.horse"] .label{border-radius:0 0 15px 15px}:root[data-theme="halloween"] .tile[data-game="enclose.horse"]::after{content:"";position:absolute;z-index:4;top:-110px;right:-10px;width:clamp(96px,10vw,128px);aspect-ratio:1;background:url("assets/halloween-pumpkin.png") center/contain no-repeat;filter:drop-shadow(0 3px 5px rgba(14,7,12,.38));pointer-events:none}
+:root[data-theme="halloween"] .section-title{color:#ffbd72}:root[data-theme="halloween"] .label{background:linear-gradient(90deg,rgba(255,154,69,.08),transparent 55%)}:root[data-theme="halloween"] .theme-dot[data-theme-choice="halloween"]{box-shadow:0 0 0 2px #f6d5ae,0 0 16px rgba(255,144,49,.62)}
+.vampire-detail{display:none}
+:root[data-theme="halloween"] .vampire-detail{display:initial}
+:root[data-theme="halloween"] .wordmark{color:#fff0dc}
+
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px Georgia,'Times New Roman',serif;min-height:100vh}
+main{width:min(1440px,100%);padding:25px clamp(18px,4vw,54px) 35px;margin:auto}
+.top{display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto auto auto;text-align:center;align-items:start;margin:3px 0 23px}.spacer{grid-column:1;grid-row:1}.wordmark{position:relative;grid-column:2;grid-row:1;display:flex;justify-content:center;align-items:center;gap:10px;color:var(--ink);font:500 clamp(40px,7vw,68px)/1.05 "Trebuchet MS",Arial,sans-serif;letter-spacing:-.065em}.wordmark svg{width:clamp(52px,7vw,70px);height:clamp(52px,7vw,70px);flex:none;overflow:visible}.brand-word{display:inline-flex;gap:0}.brand-letter{display:inline-block;transform-origin:50% 90%}.brand-letter.is-hopping{animation:letter-hop .72s cubic-bezier(.22,.72,.24,1) both}@keyframes letter-hop{0%{transform:translateY(0)}32%{transform:translateY(-11px)}55%{transform:translateY(-2px)}74%{transform:translateY(-5px)}100%{transform:translateY(0)}}.mascot #face{transform-box:fill-box;transform-origin:center}.mascot.dizzy #face{animation:head-dizzy .48s ease-in-out 3}@keyframes head-dizzy{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-17deg) scale(1.04)}45%{transform:rotate(18deg) scale(1.04)}70%{transform:rotate(-11deg) scale(1.02)}100%{transform:rotate(0) scale(1)}}.theme-picker{grid-column:1;grid-row:1;justify-self:start;align-self:start;display:flex;align-items:center;gap:9px;margin:4px 0 0 3px;z-index:3}.sound-toggle{display:grid;place-items:center;width:26px;height:26px;margin-left:2px;border:0;border-radius:50%;background:transparent;color:var(--accent);cursor:pointer;transition:background .15s ease,transform .15s ease}.sound-toggle:hover{background:var(--soft);transform:scale(1.08)}.sound-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.sound-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.sound-toggle[aria-pressed="false"] .sound-waves{display:none}.theme-dot{width:21px;height:21px;padding:0;border:2px solid rgba(255,255,255,.82);border-radius:50%;cursor:pointer;box-shadow:0 1px 4px rgba(35,22,15,.24);transition:transform .15s ease,box-shadow .15s ease}.theme-dot:hover{transform:scale(1.16)}.theme-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.theme-dot[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink),0 2px 7px rgba(35,22,15,.25)}.theme-dot[data-theme-choice="light"]{background:linear-gradient(135deg,#f4e5cf 0 50%,#fff 50%)}.theme-dot[data-theme-choice="dark"]{background:linear-gradient(135deg,#a87954 0 50%,#33251f 50%)}.theme-dot[data-theme-choice="halloween"]{background:linear-gradient(135deg,#312438 0 48%,#f28b35 50% 100%)}.wordmark .mascot{width:36px;height:36px;transform:translateY(15px)}.tagline{grid-column:2;grid-row:2;margin:7px 0 0;color:var(--muted);font:15px Arial,sans-serif;letter-spacing:.01em}.info{grid-column:2;grid-row:3;display:flex;justify-content:center;gap:14px;align-items:center;color:var(--muted);font-size:13px;margin-top:12px}.weather{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:4px 0}.weather:hover{color:var(--ink)}
+.profile{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:flex-start;justify-content:flex-end;gap:8px;min-height:38px;font:13px Arial,sans-serif;color:var(--muted)}.auth-form{display:grid;grid-template-columns:1fr auto;gap:5px;justify-items:end;max-width:380px}.auth-fields{grid-column:1/-1;display:flex;gap:5px}.auth-form input{width:126px;min-width:0;padding:8px 9px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:13px Arial,sans-serif;color:var(--ink)}.auth-form .auth-submit{grid-column:2}.auth-form .auth-mode{grid-column:1;grid-row:2;border:0;background:transparent;padding:6px 2px;color:var(--muted);font:12px Arial,sans-serif;text-decoration:underline}.auth-message{grid-column:1/-1;max-width:340px;text-align:right}.auth-form button:disabled{opacity:.55;cursor:wait}.profile button{border:1px solid var(--line);border-radius:8px;background:var(--soft);color:var(--accent);padding:8px 10px;font:13px Arial,sans-serif;cursor:pointer}.profile button:hover{background:var(--soft-hover)}.profile-on{text-align:right;line-height:1.5}.profile-name{display:block;color:var(--ink);font-weight:600}.profile-streak{display:block;color:var(--accent)}.profile-hint{display:block;font-size:10px;color:var(--muted)}
+.game-section{margin:25px 0 30px}.section-title{margin:0 0 12px;color:var(--accent);font:600 20px Georgia,serif}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px 20px}.tile{position:relative;display:block;min-width:0;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .16s ease,box-shadow .16s ease}.tile:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(56,37,25,.22),0 4px 8px rgba(56,37,25,.09)}.art{display:block;width:100%;aspect-ratio:2.15/1;object-fit:cover;background:#f5f0e9}.label{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px 11px;font:600 14px Georgia;color:var(--ink)}.game-title{min-width:0}.game-streak{flex:none;color:var(--accent);font:600 12px Arial,sans-serif}.game-streak[hidden]{display:none}
+.bird{position:absolute;z-index:2;width:25px!important;height:20px!important;left:calc(50% + 28px);top:13px;overflow:visible;transform-origin:50% 85%;animation:bird-arrive 1.45s cubic-bezier(.2,.72,.3,1) both}.bird-wing{transform-box:fill-box;transform-origin:70% 35%;animation:bird-flap .2s ease-in-out 6 alternate}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:29px}@keyframes bird-arrive{0%{opacity:0;transform:translate(130px,-100px) rotate(24deg) scale(.8)}45%{opacity:1;transform:translate(46px,-38px) rotate(-12deg)}75%{transform:translate(-3px,4px) rotate(5deg)}90%{transform:translate(2px,-3px) rotate(-3deg)}100%{opacity:1;transform:translate(0,0) rotate(0)}}@keyframes bird-flap{from{transform:rotate(-14deg)}to{transform:rotate(17deg)}}@media(prefers-reduced-motion:reduce){.bird,.bird-wing,.tile{animation:none;transition:none}.bird{opacity:1;transform:none}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.art{aspect-ratio:2.15/1}}
+@media(max-width:650px){main{padding:16px 13px 25px}.top{grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto;margin-bottom:17px}.spacer{display:none}.profile{grid-column:1;grid-row:1;justify-self:end;max-width:100%}.auth-form{max-width:min(380px,68vw)}.auth-form input{width:min(126px,30vw)}.wordmark{grid-column:1;grid-row:3;gap:6px}.wordmark svg{width:52px;height:52px}.wordmark .mascot{width:34px;height:34px;transform:translateY(10px)}.bird{left:calc(50% + 10px);top:-6px}.tagline{grid-column:1;grid-row:4;font-size:13px}.info{grid-column:1;grid-row:5;gap:9px;font-size:11px}.grid{grid-template-columns:1fr;gap:12px}.art{aspect-ratio:2.35/1}.theme-picker{grid-column:1;grid-row:2;justify-self:start;align-self:start;margin:0 0 0 2px}}
+</style>
+</head>
+<body><main>
+<header class="top">
+  <span class="spacer" aria-hidden="true"></span>
+  <div class="wordmark" aria-label="daily fun">
+    <span class="brand-word"><span class="brand-letter" style="--letter:0">d</span><span class="brand-letter" style="--letter:1">a</span><span class="brand-letter" style="--letter:2">i</span><span class="brand-letter" style="--letter:3">l</span><span class="brand-letter" style="--letter:4">y</span></span>
+    <svg class="mascot" id="mascot" viewBox="0 0 96 96" role="img" aria-label="Rysunkowa głowa Antka">
+      <g id="face">
+      <path fill="#49352e" d="M20 43Q12 34 19 27Q13 17 25 13Q29 3 41 10Q51 2 61 10Q75 8 76 20Q87 27 78 37L72 51 22 54Z"/>
+      <path fill="#c88765" d="M18 43Q13 38 16 33Q19 29 23 34L25 43M78 43Q83 38 80 33Q77 29 73 34L71 43"/>
+      <path fill="#d79a76" d="M24 31Q25 19 48 18Q70 19 72 33L70 59Q68 76 50 81Q32 78 27 61Z"/>
+      <path fill="#49352e" d="M22 39Q19 29 26 23Q23 15 34 14Q40 7 47 14Q55 7 62 14Q74 14 72 25Q80 31 74 41L68 35Q60 38 54 31Q44 39 34 33Q29 37 22 39Z"/>
+      <path fill="none" stroke="#34251f" stroke-width="2.5" stroke-linecap="round" d="M29 43Q35 40 41 43M55 43Q61 40 67 43"/>
+      <ellipse cx="35.5" cy="49" rx="6.5" ry="5.2" fill="#fffaf3"/><ellipse cx="60.5" cy="49" rx="6.5" ry="5.2" fill="#fffaf3"/>
+      <g id="leftPupil"><ellipse cx="35.5" cy="49" rx="3.8" ry="4.7" fill="#30221d"/><circle cx="36.7" cy="47.5" r="1.1" fill="white"/></g>
+      <g id="rightPupil"><ellipse cx="60.5" cy="49" rx="3.8" ry="4.7" fill="#30221d"/><circle cx="61.7" cy="47.5" r="1.1" fill="white"/></g>
+      <path fill="none" stroke="#b8765a" stroke-width="2" stroke-linecap="round" d="M48 50Q45 58 48 60Q50 61 52 59"/>
+      <path fill="#68443a" d="M35 65Q41 62 47 65Q51 67 55 64Q61 62 66 66Q62 73 55 72Q50 70 46 72Q39 72 35 65Z"/>
+      <path fill="none" stroke="#773f42" stroke-width="2" stroke-linecap="round" d="M42 76Q49 78 56 75"/>
+      <path fill="none" stroke="#765342" stroke-width="1.5" stroke-linecap="round" d="M31 57l2 1M64 57l2-1"/>
+      <path class="vampire-detail" fill="#4d263a" d="M22 29Q28 9 49 12Q69 10 76 31L68 26Q56 32 49 24Q38 33 29 27Z"/>
+      <path class="vampire-detail" fill="#fff4df" stroke="#5c2636" stroke-width="1" d="M38 64l5 1-2 10zM59 64l-5 1 2 10z"/>
+      <path class="vampire-detail" fill="#9d253b" d="M25 79Q48 72 71 79L83 94 48 87 13 94Z"/>
+      <circle class="vampire-detail" cx="75" cy="35" r="3" fill="#d94a42"/>
+      </g>
+    </svg><span class="brand-word"><span class="brand-letter" style="--letter:0">f</span><span class="brand-letter" style="--letter:1">u</span><span class="brand-letter" style="--letter:2">n</span></span>
+  </div>
+  <div class="profile" id="profile" aria-live="polite"></div>
+  <p class="tagline">gry i małe odkrycia</p>
+  <div class="info"><span id="date"></span><button class="weather" id="weather" title="Kliknij, aby ponowić wykrywanie pogody">Pogoda: wykrywam lokalizację…</button></div>
+  <div class="theme-picker" role="group" aria-label="Wybierz motyw">
+    <button class="theme-dot" type="button" data-theme-choice="light" aria-label="Jasny motyw" title="Jasny — beżowo-biały"></button>
+    <button class="theme-dot" type="button" data-theme-choice="dark" aria-label="Ciemny motyw" title="Ciemny — brązowy"></button>
+    <button class="theme-dot" type="button" data-theme-choice="halloween" aria-label="Motyw halloweenowy" title="Halloween — śliwkowy i pomarańczowy"></button>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-label="Wyłącz dźwięki" aria-pressed="true" title="Włącz lub wyłącz dźwięki">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path class="sound-waves" d="M16 9a5 5 0 0 1 0 6m2.5-8.5a8.5 8.5 0 0 1 0 11"/></svg>
+    </button>
+  </div>
+</header>
+<div id="games"></div>
+<footer class="footer">Miłego grania ✦</footer>
+</main>
+<script>
+const categories=[
+ {title:'Najlepsze rozwiązanie',items:[
+  {name:'Catescape',url:'https://catescape.dev/',image:'assets/catescape.png'},
+  {name:'Krillion',url:'https://krillion.io/?utm_source=playlin',image:'assets/krillion.png'},
+  {name:'enclose.horse',url:'https://enclose.horse/',image:'assets/enclose-horse.png'},
+  {name:'Primaries',url:'https://primaries.day/',image:'assets/primaries.png'},
+  {name:'Wonderhop',url:'https://wonderhop.io/en/?utm_source=listdle&utm_medium=referral',image:'assets/wonderhop.png'},
+  {name:'Seedle',url:'https://seedle.io/',image:'assets/seedle.png'}
+ ]},
+ {title:'Klasyki',items:[
+  {name:'Wordle',url:'https://www.nytimes.com/games/wordle/index.html',image:'assets/wordle.png'},
+  {name:'Connections',url:'https://www.nytimes.com/games/connections',image:'assets/connections.png'}
+ ]},
+ {title:'Muzyka',items:[
+  {name:'Songless',url:'https://lessgames.com/songless',image:'assets/lessgames.com.png'},
+  {name:'VocalStim',url:'https://vocalstim.app/',image:'assets/vocalstim.png'},
+  {name:'100hitów',url:'https://100hitow.pl/',image:'assets/100hitów.png'},
+  {name:'Dialed Sound',url:'https://dialed.gg/sound',image:'assets/dialed-sound.png'},
+  {name:'Dialed Tempo',url:'https://dialed.gg/tempo',image:'assets/dialed-tempo.png'}
+ ]},
+ {title:'Traf w odpowiedź',items:[
+  {name:'Loldle',url:'https://loldle.net/',image:'assets/loldle.jpg'},
+  {name:'Isaac Connect',url:'https://isaaconnect.com/',image:'assets/isaaconnect.png'},
+  {name:'Nerdle',url:'https://www.nerdlegame.com/',image:'assets/nerdle.png'},
+  {name:'Truth Sweeper',url:'https://mayhex.gg/truthsweeper',image:'assets/mayhex-truthsweeper.png'},
+ ]},
+ {title:'Jak blisko?',items:[
+  {name:'Metazooa',url:'https://metazooa.com/',image:'assets/metazooa.png'},
+  {name:'Size It Up',url:'https://magnitudle.com/size-it-up',image:'assets/sizeitup.png'},
+  {name:'MayHex POUR',url:'https://mayhex.gg/pour/',image:'assets/mayhex-pour.png'},
+  {name:'Hexcodle',url:'https://hexcodle.com/',image:'assets/hexcodle.jpg'},
+  {name:'Dialed Color',url:'https://dialed.gg/color',image:'assets/dialed-color.png'},
+  {name:'Anything Grid',url:'https://anythinggrid.com/',image:'assets/anything-grid.png'}
+ ]},
+ {title:'Geografia',items:[
+  {name:'TimeGuessr',url:'https://timeguessr.com/play',image:'assets/timeguessr.png'},
+  {name:'Borderline',url:'https://borderline.world/',image:'assets/borderline.png'},
+  {name:'The Hex Hunt',url:'https://thehexhunt.com/',image:'assets/hex-hunt.png'},
+  {name:'Globle',url:'https://globle-game.com/',image:'assets/globle.png'}
+ ]},
+ {title:'Logika',items:[
+  {name:'Does Monday Work?',url:'https://www.doesmondaywork.com/',image:'assets/doesmondaywork.png'},
+  {name:'Who Farted',url:'https://whofartedgame.com/en',image:'assets/whofarted.png'},
+  {name:'SUMS',url:'https://sums.games/',image:'assets/sums.png'}
+ ]},
+ {title:'Zabawa',items:[
+  {name:'Mini Golf',url:'https://golf.dayplaygames.com/',image:'assets/golf-dayplay.png'},
+  {name:'Infinite Craft',url:'https://neal.fun/infinite-craft/',image:'assets/infinite-craft.svg'}
+ ]}
+];
+const SOUND_KEY='dailyFunSounds';const soundToggle=document.querySelector('#soundToggle');let soundsEnabled=true;try{soundsEnabled=localStorage.getItem(SOUND_KEY)!=='false'}catch{}function syncSoundToggle(){soundToggle.setAttribute('aria-pressed',String(soundsEnabled));soundToggle.setAttribute('aria-label',soundsEnabled?'Wyłącz dźwięki':'Włącz dźwięki')}syncSoundToggle();let uiAudio=null;function playBubbleSound(index){if(!soundsEnabled)return;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;uiAudio??=new AC();if(uiAudio.state==='suspended')uiAudio.resume();const now=uiAudio.currentTime,frequency=430+(index%5)*58,osc=uiAudio.createOscillator(),gain=uiAudio.createGain();osc.type='sine';osc.frequency.setValueAtTime(frequency,now);osc.frequency.exponentialRampToValueAtTime(frequency*1.48,now+.045);osc.frequency.exponentialRampToValueAtTime(frequency*.62,now+.16);gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.022,now+.01);gain.gain.exponentialRampToValueAtTime(.0001,now+.18);osc.connect(gain);gain.connect(uiAudio.destination);osc.start(now);osc.stop(now+.19)}catch{}}function playUiSound(kind='click'){if(!soundsEnabled)return;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;uiAudio??=new AC();if(uiAudio.state==='suspended')uiAudio.resume();const now=uiAudio.currentTime;const notes=kind==='theme'?[560,740]:kind==='toggle'?[660]:[430];notes.forEach((frequency,index)=>{const start=now+index*.055,osc=uiAudio.createOscillator(),gain=uiAudio.createGain();osc.type='sine';osc.frequency.setValueAtTime(frequency,start);osc.frequency.exponentialRampToValueAtTime(frequency*.78,start+.17);gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(kind==='theme'?.027:.02,start+.012);gain.gain.exponentialRampToValueAtTime(.0001,start+.2);osc.connect(gain);gain.connect(uiAudio.destination);osc.start(start);osc.stop(start+.21)})}catch{}}soundToggle.addEventListener('click',()=>{soundsEnabled=!soundsEnabled;try{localStorage.setItem(SOUND_KEY,String(soundsEnabled))}catch{}syncSoundToggle();if(soundsEnabled)playUiSound('toggle')});document.addEventListener('click',event=>{if(event.target.closest('.tile'))playUiSound('click');else if(event.target.closest('.theme-dot'))playUiSound('theme');else if(event.target.closest('.profile button,#weather'))playUiSound('click')});
+document.querySelectorAll('.brand-letter').forEach(letter=>{letter.addEventListener('pointerenter',()=>{letter.classList.remove('is-hopping');void letter.offsetWidth;letter.classList.add('is-hopping');playBubbleSound(Number(letter.style.getPropertyValue('--letter'))||0)});letter.addEventListener('animationend',event=>{if(event.animationName==='letter-hop')letter.classList.remove('is-hopping')})});
+const THEME_KEY='dailyFunTheme';
+const themeDots=[...document.querySelectorAll('.theme-dot')];
+function applyTheme(theme){const valid=['light','dark','halloween'].includes(theme)?theme:'light';document.documentElement.dataset.theme=valid;themeDots.forEach(dot=>dot.setAttribute('aria-pressed',String(dot.dataset.themeChoice===valid)));try{localStorage.setItem(THEME_KEY,valid)}catch{}const colors={light:'#f6efe5',dark:'#2b211d',halloween:'#211b26'};document.querySelector('meta[name=theme-color]').content=colors[valid]}
+let savedTheme='light';try{savedTheme=localStorage.getItem(THEME_KEY)||'light'}catch{}applyTheme(savedTheme);themeDots.forEach(dot=>dot.addEventListener('click',()=>applyTheme(dot.dataset.themeChoice)));
+const gamesEl=document.querySelector('#games');
+gamesEl.innerHTML=categories.map(category=>`<section class="game-section"><h2 class="section-title">${category.title}</h2><div class="grid">${category.items.map(g=>`<a class="tile" href="${g.url}" target="_blank" rel="noopener noreferrer" data-game="${g.name}" aria-label="Otwórz ${g.name} w nowej karcie"><img class="art" src="${g.image}" alt="${g.name}" loading="lazy"><span class="label"><span class="game-title">${g.name}</span><span class="game-streak" data-streak-for="${g.name}" hidden></span></span></a>`).join('')}</div></section>`).join('');
+document.querySelector('#date').textContent=new Date().toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'});
+
+let authMode='register',authUser=null,csrfToken='',gameStreaks={},apiReady=false,authMessage='';
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function drawGameStreaks(){document.querySelectorAll('.game-streak').forEach(el=>{if(!authUser){el.hidden=true;el.textContent='';return}const n=gameStreaks[el.dataset.streakFor]||0;el.hidden=false;el.textContent=`🔥 ${n}`;el.title=`Seria tej gry: ${n} ${n===1?'dzień':'dni'}`})}
+function drawProfile(message=authMessage){const box=document.querySelector('#profile');if(authUser){box.innerHTML=`<div class="profile-on"><span class="profile-name">${escapeHtml(authUser.username)}</span><span class="profile-hint">zalogowano · serie przy grach</span></div><button type="button" id="logout">Wyloguj</button>`;box.querySelector('#logout').addEventListener('click',logout)}else{const registering=authMode==='register';box.innerHTML=`<form class="auth-form" id="authForm"><div class="auth-fields"><input name="username" maxlength="24" minlength="2" placeholder="Login" aria-label="Login" autocomplete="username" required><input name="password" type="password" minlength="8" maxlength="200" placeholder="Hasło" aria-label="Hasło" autocomplete="${registering?'new-password':'current-password'}" required></div><button class="auth-submit" type="submit" ${apiReady?'':'disabled'}>${registering?'Zarejestruj':'Zaloguj'}</button><button class="auth-mode" id="authModeToggle" type="button">${registering?'Mam konto':'Utwórz konto'}</button><span class="profile-hint auth-message">${escapeHtml(message|| (apiReady?(registering?'Załóż konto, aby zapisywać serie':'Zaloguj się, aby zapisywać serie'):'Łączę z bazą kont…'))}</span></form>`;box.querySelector('#authForm').addEventListener('submit',submitAuth);box.querySelector('#authModeToggle').addEventListener('click',()=>{authMode=authMode==='register'?'login':'register';authMessage='';drawProfile()})}drawGameStreaks()}
+async function apiRequest(action,data=null){const options={method:data?'POST':'GET',credentials:'same-origin',headers:{'Accept':'application/json'}};if(data){options.headers['Content-Type']='application/json';options.headers['X-CSRF-Token']=csrfToken;options.body=JSON.stringify(data)}const response=await fetch(`api.php?action=${encodeURIComponent(action)}`,options);const payload=await response.json();if(!response.ok)throw new Error(payload.error||'Wystąpił błąd.');return payload}
+async function initializeAuth(){try{const data=await apiRequest('me');csrfToken=data.csrf;authUser=data.user;gameStreaks=data.streaks||{};apiReady=true;authMessage='';drawProfile()}catch{apiReady=false;authMessage='Uruchom run-local.bat, aby włączyć konta i bazę SQLite.';drawProfile()}}
+async function submitAuth(event){event.preventDefault();if(!apiReady)return;const form=event.currentTarget,values=new FormData(form),username=String(values.get('username')||'').trim(),password=String(values.get('password')||'');try{const data=await apiRequest(authMode,{username,password});csrfToken=data.csrf;authUser=data.user;gameStreaks=data.streaks||{};authMessage='';drawProfile()}catch(error){authMessage=error.message;drawProfile(authMessage)}}
+async function logout(){try{const data=await apiRequest('logout',{});csrfToken=data.csrf;authUser=null;gameStreaks={};authMessage='';drawProfile()}catch(error){authMessage=error.message;drawProfile(authMessage)}}
+async function recordGame(gameId){if(!authUser){authMessage='Zaloguj się, aby zapisywać serię dla każdej gry.';drawProfile(authMessage);return}try{const data=await apiRequest('play',{game_id:gameId});gameStreaks=data.streaks||gameStreaks;drawGameStreaks()}catch(error){authMessage=error.message;drawProfile(authMessage)}}
+drawProfile('Łączę z bazą kont…');initializeAuth();
+gamesEl.addEventListener('click',event=>{const tile=event.target.closest('.tile');if(tile)recordGame(tile.dataset.game)});
+const mascot=document.querySelector('#mascot');
+let orbitAngle=null,orbitSum=0,orbitStart=0,dizzyUntil=0;
+function lookAtPointer(event){
+  const rect=mascot.getBoundingClientRect(),cx=rect.left+rect.width/2,cy=rect.top+rect.height/2;
+  const dx=event.clientX-cx,dy=event.clientY-cy,distance=Math.hypot(dx,dy)||1;
+  const reach=Math.min(1,1/distance),mx=dx*reach*7,my=dy*reach*6;
+  if(!mascot.classList.contains('dizzy')){
+    document.getElementById('leftPupil').setAttribute('transform','translate('+mx+' '+my+')');
+    document.getElementById('rightPupil').setAttribute('transform','translate('+mx+' '+my+')');
+  }
+  const now=performance.now(),radius=Math.hypot(dx,dy);
+  if(radius>24&&radius<Math.max(rect.width,rect.height)*3){
+    const angle=Math.atan2(dy,dx);
+    if(orbitAngle!==null&&now-orbitStart<1600){
+      let delta=angle-orbitAngle;
+      while(delta>Math.PI)delta-=Math.PI*2;
+      while(delta< -Math.PI)delta+=Math.PI*2;
+      if(Math.abs(delta)<1.25)orbitSum+=Math.abs(delta);else orbitSum=0;
+    }else{orbitSum=0;orbitStart=now}
+    if(orbitSum>=Math.PI*2&&now>dizzyUntil){
+      mascot.classList.remove('dizzy');void mascot.getBoundingClientRect();mascot.classList.add('dizzy');
+      dizzyUntil=now+2200;orbitSum=0;orbitStart=now;
+    }else if(orbitSum===0)orbitStart=now;
+    orbitAngle=angle;
+  }else{orbitAngle=null;orbitSum=0}
+  if(orbitAngle!==null&&now-orbitStart>1600){orbitAngle=null;orbitSum=0}
+}
+mascot.addEventListener('animationend',event=>{if(event.animationName==='head-dizzy')mascot.classList.remove('dizzy')});
+document.addEventListener('pointermove',lookAtPointer,{passive:true});
+const weatherEl=document.querySelector('#weather');
+const weatherText=code=>code===0?'bezchmurnie':code<=3?'pochmurno':code<50?'mgła':code<60?'mżawka':code<70?'deszcz':code<80?'śnieg':code<90?'przelotne opady':'burza';
+async function getWeather(lat,lon){const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&timezone=auto`);if(!r.ok)throw Error('weather');const d=await r.json();weatherEl.textContent=`Pogoda: ${Math.round(d.current.temperature_2m)}°C · ${weatherText(d.current.weather_code)}`}
+function detectWeather(){if(!navigator.geolocation){weatherEl.textContent='Pogoda: lokalizacja niedostępna';return}weatherEl.textContent='Pogoda: wykrywam lokalizację…';navigator.geolocation.getCurrentPosition(async p=>{try{await getWeather(p.coords.latitude,p.coords.longitude)}catch{weatherEl.textContent='Pogoda: nie udało się pobrać danych'}},()=>{weatherEl.textContent='Pogoda: zezwól przeglądarce na lokalizację'}, {enableHighAccuracy:false,timeout:12000,maximumAge:600000})}
+weatherEl.addEventListener('click',detectWeather);detectWeather();
+</script></body></html>

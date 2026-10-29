@@ -1,0 +1,18 @@
+daily fun — konta i serie gier
+
+Konta wymagają PHP z rozszerzeniem PDO_SQLite.
+
+1. Uruchom run-local.bat.
+2. Strona otworzy się pod adresem http://127.0.0.1:8000.
+3. Wybierz „Zarejestruj” i załóż konto loginem oraz hasłem.
+4. Po zalogowaniu obok nazwy każdej gry zobaczysz jej osobny streak.
+
+Kliknięcie kafelka zapisuje aktywność tej gry na dziś. Seria zwiększa się za każdy kolejny dzień aktywności w tej samej grze. Wszystkie dane zapisują się we wspólnej bazie SQLite daily-fun.sqlite obok folderu strony, więc można wrócić do konta i serii po ponownym uruchomieniu serwera.
+
+Login: 2–24 znaki, litery/cyfry, podkreślenie lub myślnik. Hasło: co najmniej 8 znaków. Hasła są przechowywane w postaci skrótu.
+
+Jeśli PHP nie jest zainstalowane albo brakuje rozszerzenia PDO_SQLite, run-local.bat pokaże komunikat. Po instalacji PHP dodaj php.exe do PATH i włącz PDO_SQLite w php.ini.
+
+Aby używać kont na kilku urządzeniach, umieść folder strony na hostingu obsługującym PHP i PDO_SQLite. Baza SQLite musi znajdować się na tym samym serwerze.
+
+Samo otwarcie index.html jako pliku nie uruchomi PHP. Do lokalnego używania logowania zawsze uruchamiaj run-local.bat.
